@@ -15,6 +15,7 @@ namespace LivePerformanceFerdyCusters
         public Form1()
         {
             InitializeComponent();
+            DBConnect.InitializeConnection();
         }
     }
 }
