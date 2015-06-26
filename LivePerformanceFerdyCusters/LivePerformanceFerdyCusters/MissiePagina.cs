@@ -179,5 +179,25 @@ namespace LivePerformanceFerdyCusters
             }
             Refresh("None");
         }
+
+        private void btnBereken_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bestaandeBoten = DBConnect.GetBoten();
+                foreach (Boot boot in bestaandeBoten)
+                {
+                    int value = boot.Locatie.IndexOf(",");
+                    int x = Convert.ToInt32(boot.Locatie.Substring(1, value - 1));
+                    int y = Convert.ToInt32(boot.Locatie.Substring(value, boot.Locatie.Length - value));
+                    MessageBox.Show(x + " " + y);
+                    //boot.calculate()
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Selecteer de locatie van de missie!");
+            }
+        }
     }
 }

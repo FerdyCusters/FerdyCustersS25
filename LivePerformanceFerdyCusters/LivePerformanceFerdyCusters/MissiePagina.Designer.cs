@@ -196,6 +196,7 @@
             this.btnBereken.TabIndex = 39;
             this.btnBereken.Text = "Bereken Dichtsbijzijnde boot";
             this.btnBereken.UseVisualStyleBackColor = true;
+            this.btnBereken.Click += new System.EventHandler(this.btnBereken_Click);
             // 
             // dtpStartDatum
             // 

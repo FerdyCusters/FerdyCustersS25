@@ -50,6 +50,22 @@ namespace LivePerformanceFerdyCusters
             return this.Naam + " " + this.Locatie;
         }
 
+        /// <summary>
+        /// Methode om afstand te berekenen m.b.v. stelling van pythagoras.
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        /// <returns></returns>
+        public int calculate(int x1, int y1, int x2, int y2)
+        {
+            int afstandX = Math.Abs(x1 - x2);
+            int afstandY = Math.Abs(y1 - y2);
+            int cKwadraat = (afstandX ^ 2) + (afstandY ^ 2);
+            int c = (int)Math.Sqrt(cKwadraat);
+            return c;
+        }
         #endregion
     }
 }

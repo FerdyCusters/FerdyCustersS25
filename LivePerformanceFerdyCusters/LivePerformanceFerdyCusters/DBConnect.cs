@@ -88,7 +88,7 @@ namespace LivePerformanceFerdyCusters
             }
             catch (OracleException msg)
             {
-                MessageBox.Show(msg.Message + "/n Het ziet ernaar uit dat de connectie met de database niet werkt. Toch is er wat testdata ingevoerd voor het geval dat dit zou gebeuren");
+                MessageBox.Show(msg.Message + "\n Het ziet ernaar uit dat de connectie met de database niet werkt. Toch is er wat testdata ingevoerd voor het geval dat dit zou gebeuren");
 
                 // Data om toch iets in het programma te kunnen doen, ondanks een eventueel defectie database.
 
