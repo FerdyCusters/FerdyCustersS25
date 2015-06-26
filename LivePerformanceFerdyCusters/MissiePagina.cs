@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace LivePerformanceFerdyCusters
+﻿namespace LivePerformanceFerdyCusters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
     public partial class MissiePagina : Form
     {
 
+        #region Fields
         public List<Missie> sjablonen = new List<Missie>();
         public List<SIN> bestaandeSins = new List<SIN>();
         public List<HOPE> bestaandeHopes = new List<HOPE>();
@@ -23,14 +23,22 @@ namespace LivePerformanceFerdyCusters
         public List<Incident> bestaandeIncidenten = new List<Incident>();
         public List<Meting> bestaandeMetingen = new List<Meting>();
         public List<Boot> bestaandeBoten = new List<Boot>();
-        
+        #endregion
 
+        /// <summary>
+        /// Missiepagina.
+        /// </summary>
         public MissiePagina()
         {
             InitializeComponent();
             Refresh("None");
         }
 
+        /// <summary>
+        /// verwijst terug naar de Homepagina.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGaTerug_Click(object sender, EventArgs e)
         {
             new HomePagina().Show();
@@ -40,7 +48,7 @@ namespace LivePerformanceFerdyCusters
         #region Refresh Methode
         /// <summary>
         /// Deze methode refreshed alle listboxen in het form. In deze methode moet ik functionaliteit in de GUI laag stoppen.
-        /// Dit is de enige manier om de listboxen up-to-date te houden met de huidige situatie.
+        /// Dit is de enige manier om de listboxen up-to-date te houden met de huidige situatie. De parameter houdt in wat er moet worden ge-update.
         /// </summary>
         /// <param name="indicator"></param>
         public void Refresh(string indicator)
@@ -180,19 +188,33 @@ namespace LivePerformanceFerdyCusters
             Refresh("None");
         }
 
+        /// <summary>
+        /// Event handler voor het berekenen van de dichtsbijzijnde boot.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBereken_Click(object sender, EventArgs e)
         {
             try
             {
+                int afstand = 100000;
                 bestaandeBoten = DBConnect.GetBoten();
                 foreach (Boot boot in bestaandeBoten)
                 {
                     int value = boot.Locatie.IndexOf(",");
                     int x = Convert.ToInt32(boot.Locatie.Substring(1, value - 1));
-                    int y = Convert.ToInt32(boot.Locatie.Substring(value, boot.Locatie.Length - value));
-                    MessageBox.Show(x + " " + y);
-                    //boot.calculate()
+                    int y = Convert.ToInt32(boot.Locatie.Substring((value + 1), boot.Locatie.Length - (value + 2)));
+                    int berekendeAfstand = boot.calculate(x, y, Convert.ToInt32(txtLocatieX.Text), Convert.ToInt32(txtLocatieY.Text));
+
+                    if (berekendeAfstand < afstand)
+                    {
+                        afstand = berekendeAfstand;
+                        cbBoot.Text = boot.Naam;
+                        lblAfstand.Text = Convert.ToString(afstand);
+                    }
                 }
+
+                MessageBox.Show("Gelukt! De dichstbijzijnde boot is: " + cbBoot.Text + ". De afstand is: " + lblAfstand.Text);
             }
             catch
             {

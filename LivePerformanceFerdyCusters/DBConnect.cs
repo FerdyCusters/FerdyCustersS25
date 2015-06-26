@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
-
-namespace LivePerformanceFerdyCusters
+﻿namespace LivePerformanceFerdyCusters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using Oracle.DataAccess.Client;
+    using Oracle.DataAccess.Types;
+
     public static class DBConnect
     {
 
@@ -134,6 +134,7 @@ namespace LivePerformanceFerdyCusters
                 {
                     return new Missie(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), Convert.ToBoolean(dr[4]), dr[5].ToString());
                 }
+
                 return null;
             }
             catch

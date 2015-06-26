@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivePerformanceFerdyCusters
+﻿namespace LivePerformanceFerdyCusters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Missie
     {
         #region Fields
@@ -54,30 +54,50 @@ namespace LivePerformanceFerdyCusters
             return this.Naam + " " + this.Locatie + " " + this.Type;
         }
 
+        /// <summary>
+        /// Meting wordt toegevoegd.
+        /// </summary>
+        /// <returns></returns>
         public bool VoegMetingToe()
         {
             //TODO
             return false;
         }
 
+        /// <summary>
+        /// Persoon wordt toegevoegd.
+        /// </summary>
+        /// <returns></returns>
         public bool VoegPersoonToe()
         {
             //TODO
             return false;
         }
 
+        /// <summary>
+        /// Item wordt toegevoegd.
+        /// </summary>
+        /// <returns></returns>
         public bool VoegItemToe()
         {
             //TODO
             return false;
         }
 
+        /// <summary>
+        /// Boot wordt toegevoegd.
+        /// </summary>
+        /// <returns></returns>
         public bool VoegBootToe()
         {
             //TODO
             return false;
         }
 
+        /// <summary>
+        /// Afstand wordt berekend.
+        /// </summary>
+        /// <returns></returns>
         public bool BerekenAfstand()
         {
             //TODO

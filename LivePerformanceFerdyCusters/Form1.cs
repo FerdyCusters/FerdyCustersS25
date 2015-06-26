@@ -12,12 +12,20 @@ namespace LivePerformanceFerdyCusters
 {
     public partial class LogIn : Form
     {
+        /// <summary>
+        /// Login Form
+        /// </summary>
         public LogIn()
         {
             InitializeComponent();
             DBConnect.InitializeConnection();
         }
 
+        /// <summary>
+        /// Verwijst door naar de homepagina.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             new HomePagina().Show();

@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivePerformanceFerdyCusters
+﻿namespace LivePerformanceFerdyCusters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Klasse Boot.
+    /// </summary>
     public class Boot
     {
         #region Fields 
@@ -16,7 +19,6 @@ namespace LivePerformanceFerdyCusters
         public int MaxPersonen { get; set; }
         public string Locatie { get; set; }
         public Missie Missie { get; set; }
-
 
         #endregion
 

@@ -35,6 +35,8 @@
             this.lblMissieText = new System.Windows.Forms.Label();
             this.lbPersonenAanLand = new System.Windows.Forms.ListBox();
             this.pnBasis = new System.Windows.Forms.Panel();
+            this.lblAfstand = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnBereken = new System.Windows.Forms.Button();
             this.dtpStartDatum = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -157,6 +159,8 @@
             // 
             // pnBasis
             // 
+            this.pnBasis.Controls.Add(this.lblAfstand);
+            this.pnBasis.Controls.Add(this.label15);
             this.pnBasis.Controls.Add(this.btnBereken);
             this.pnBasis.Controls.Add(this.dtpStartDatum);
             this.pnBasis.Controls.Add(this.label14);
@@ -187,6 +191,24 @@
             this.pnBasis.Name = "pnBasis";
             this.pnBasis.Size = new System.Drawing.Size(484, 440);
             this.pnBasis.TabIndex = 6;
+            // 
+            // lblAfstand
+            // 
+            this.lblAfstand.AutoSize = true;
+            this.lblAfstand.Location = new System.Drawing.Point(428, 330);
+            this.lblAfstand.Name = "lblAfstand";
+            this.lblAfstand.Size = new System.Drawing.Size(10, 13);
+            this.lblAfstand.TabIndex = 41;
+            this.lblAfstand.Text = "-";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(275, 330);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(138, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Afstand dichtsbijzijnde boot:";
             // 
             // btnBereken
             // 
@@ -308,6 +330,7 @@
             // 
             // btnLinksMateriaal
             // 
+            this.btnLinksMateriaal.Enabled = false;
             this.btnLinksMateriaal.Location = new System.Drawing.Point(213, 197);
             this.btnLinksMateriaal.Name = "btnLinksMateriaal";
             this.btnLinksMateriaal.Size = new System.Drawing.Size(63, 23);
@@ -317,6 +340,7 @@
             // 
             // btnRechtsMateriaal
             // 
+            this.btnRechtsMateriaal.Enabled = false;
             this.btnRechtsMateriaal.Location = new System.Drawing.Point(213, 168);
             this.btnRechtsMateriaal.Name = "btnRechtsMateriaal";
             this.btnRechtsMateriaal.Size = new System.Drawing.Size(63, 23);
@@ -379,6 +403,7 @@
             // 
             // btnPersonenLinks
             // 
+            this.btnPersonenLinks.Enabled = false;
             this.btnPersonenLinks.Location = new System.Drawing.Point(213, 72);
             this.btnPersonenLinks.Name = "btnPersonenLinks";
             this.btnPersonenLinks.Size = new System.Drawing.Size(63, 23);
@@ -388,6 +413,7 @@
             // 
             // btnPersRechts
             // 
+            this.btnPersRechts.Enabled = false;
             this.btnPersRechts.Location = new System.Drawing.Point(213, 43);
             this.btnPersRechts.Name = "btnPersRechts";
             this.btnPersRechts.Size = new System.Drawing.Size(63, 23);
@@ -416,6 +442,7 @@
             // 
             // btnWijzigMissie
             // 
+            this.btnWijzigMissie.Enabled = false;
             this.btnWijzigMissie.Location = new System.Drawing.Point(106, 12);
             this.btnWijzigMissie.Name = "btnWijzigMissie";
             this.btnWijzigMissie.Size = new System.Drawing.Size(75, 23);
@@ -425,6 +452,7 @@
             // 
             // btnVerwijderMissie
             // 
+            this.btnVerwijderMissie.Enabled = false;
             this.btnVerwijderMissie.Location = new System.Drawing.Point(25, 12);
             this.btnVerwijderMissie.Name = "btnVerwijderMissie";
             this.btnVerwijderMissie.Size = new System.Drawing.Size(75, 23);
@@ -585,6 +613,7 @@
             // 
             // btnVerwijderMeting
             // 
+            this.btnVerwijderMeting.Enabled = false;
             this.btnVerwijderMeting.Location = new System.Drawing.Point(174, 142);
             this.btnVerwijderMeting.Name = "btnVerwijderMeting";
             this.btnVerwijderMeting.Size = new System.Drawing.Size(60, 23);
@@ -594,6 +623,7 @@
             // 
             // btnVoegMetingToe
             // 
+            this.btnVoegMetingToe.Enabled = false;
             this.btnVoegMetingToe.Location = new System.Drawing.Point(34, 142);
             this.btnVoegMetingToe.Name = "btnVoegMetingToe";
             this.btnVoegMetingToe.Size = new System.Drawing.Size(62, 23);
@@ -603,6 +633,7 @@
             // 
             // btnWijzigMeting
             // 
+            this.btnWijzigMeting.Enabled = false;
             this.btnWijzigMeting.Location = new System.Drawing.Point(111, 142);
             this.btnWijzigMeting.Name = "btnWijzigMeting";
             this.btnWijzigMeting.Size = new System.Drawing.Size(44, 23);
@@ -629,6 +660,7 @@
             // 
             // btnWijzigEindverslag
             // 
+            this.btnWijzigEindverslag.Enabled = false;
             this.btnWijzigEindverslag.Location = new System.Drawing.Point(80, 229);
             this.btnWijzigEindverslag.Name = "btnWijzigEindverslag";
             this.btnWijzigEindverslag.Size = new System.Drawing.Size(138, 23);
@@ -655,6 +687,7 @@
             // 
             // btnVerwijderIncident
             // 
+            this.btnVerwijderIncident.Enabled = false;
             this.btnVerwijderIncident.Location = new System.Drawing.Point(133, 129);
             this.btnVerwijderIncident.Name = "btnVerwijderIncident";
             this.btnVerwijderIncident.Size = new System.Drawing.Size(60, 23);
@@ -664,6 +697,7 @@
             // 
             // btnWijzigIncident
             // 
+            this.btnWijzigIncident.Enabled = false;
             this.btnWijzigIncident.Location = new System.Drawing.Point(80, 129);
             this.btnWijzigIncident.Name = "btnWijzigIncident";
             this.btnWijzigIncident.Size = new System.Drawing.Size(44, 23);
@@ -673,6 +707,7 @@
             // 
             // btnVoegIncidentToe
             // 
+            this.btnVoegIncidentToe.Enabled = false;
             this.btnVoegIncidentToe.Location = new System.Drawing.Point(12, 129);
             this.btnVoegIncidentToe.Name = "btnVoegIncidentToe";
             this.btnVoegIncidentToe.Size = new System.Drawing.Size(62, 23);
@@ -821,5 +856,7 @@
         private System.Windows.Forms.Button btnWijzigEindverslag;
         private System.Windows.Forms.TextBox txtEindverslag;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblAfstand;
+        private System.Windows.Forms.Label label15;
     }
 }
