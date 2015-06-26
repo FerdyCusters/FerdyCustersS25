@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace LivePerformanceFerdyCusters
 {
-    public partial class LogIn : Form
+    public partial class MissiePagina : Form
     {
-        public LogIn()
+        public MissiePagina()
         {
             InitializeComponent();
-            DBConnect.InitializeConnection();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnGaTerug_Click(object sender, EventArgs e)
         {
             new HomePagina().Show();
             this.Hide();
