@@ -45,8 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLocatieY = new System.Windows.Forms.TextBox();
+            this.txtLocatieX = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMateriaalAanBoord = new System.Windows.Forms.Label();
             this.btnLinksMateriaal = new System.Windows.Forms.Button();
@@ -67,7 +67,7 @@
             this.pnHOPE = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEindDatum = new System.Windows.Forms.DateTimePicker();
             this.cbGoedGekeurd = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@
             this.btnVoegMetingToe = new System.Windows.Forms.Button();
             this.btnWijzigMeting = new System.Windows.Forms.Button();
             this.pnSIN = new System.Windows.Forms.Panel();
+            this.btnWijzigEindverslag = new System.Windows.Forms.Button();
+            this.txtEindverslag = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnVerwijderIncident = new System.Windows.Forms.Button();
             this.btnWijzigIncident = new System.Windows.Forms.Button();
@@ -92,8 +94,6 @@
             this.txtAantalPolitie = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEindverslag = new System.Windows.Forms.TextBox();
-            this.btnWijzigEindverslag = new System.Windows.Forms.Button();
             this.pnBasis.SuspendLayout();
             this.pnHOPE.SuspendLayout();
             this.pnSIN.SuspendLayout();
@@ -117,6 +117,7 @@
             this.cbProfiel.Name = "cbProfiel";
             this.cbProfiel.Size = new System.Drawing.Size(121, 21);
             this.cbProfiel.TabIndex = 1;
+            this.cbProfiel.SelectedIndexChanged += new System.EventHandler(this.cbProfiel_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -166,8 +167,8 @@
             this.pnBasis.Controls.Add(this.label6);
             this.pnBasis.Controls.Add(this.label5);
             this.pnBasis.Controls.Add(this.label4);
-            this.pnBasis.Controls.Add(this.textBox2);
-            this.pnBasis.Controls.Add(this.textBox1);
+            this.pnBasis.Controls.Add(this.txtLocatieY);
+            this.pnBasis.Controls.Add(this.txtLocatieX);
             this.pnBasis.Controls.Add(this.label3);
             this.pnBasis.Controls.Add(this.lblMateriaalAanBoord);
             this.pnBasis.Controls.Add(this.btnLinksMateriaal);
@@ -272,19 +273,19 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Missie Locatie:";
             // 
-            // textBox2
+            // txtLocatieY
             // 
-            this.textBox2.Location = new System.Drawing.Point(213, 267);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 20);
-            this.textBox2.TabIndex = 25;
+            this.txtLocatieY.Location = new System.Drawing.Point(213, 267);
+            this.txtLocatieY.Name = "txtLocatieY";
+            this.txtLocatieY.Size = new System.Drawing.Size(43, 20);
+            this.txtLocatieY.TabIndex = 25;
             // 
-            // textBox1
+            // txtLocatieX
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 267);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 20);
-            this.textBox1.TabIndex = 24;
+            this.txtLocatieX.Location = new System.Drawing.Point(150, 267);
+            this.txtLocatieX.Name = "txtLocatieX";
+            this.txtLocatieX.Size = new System.Drawing.Size(43, 20);
+            this.txtLocatieX.TabIndex = 24;
             // 
             // label3
             // 
@@ -410,6 +411,7 @@
             this.btnVoegMissieToe.TabIndex = 7;
             this.btnVoegMissieToe.Text = "Voeg Toe";
             this.btnVoegMissieToe.UseVisualStyleBackColor = true;
+            this.btnVoegMissieToe.Click += new System.EventHandler(this.btnVoegMissieToe_Click);
             // 
             // btnWijzigMissie
             // 
@@ -442,7 +444,7 @@
             // 
             this.pnHOPE.Controls.Add(this.label17);
             this.pnHOPE.Controls.Add(this.label16);
-            this.pnHOPE.Controls.Add(this.dateTimePicker1);
+            this.pnHOPE.Controls.Add(this.dtpEindDatum);
             this.pnHOPE.Controls.Add(this.cbGoedGekeurd);
             this.pnHOPE.Controls.Add(this.label13);
             this.pnHOPE.Controls.Add(this.label10);
@@ -481,12 +483,12 @@
             this.label16.TabIndex = 40;
             this.label16.Text = "EindDatum:";
             // 
-            // dateTimePicker1
+            // dtpEindDatum
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(309, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 20);
-            this.dateTimePicker1.TabIndex = 39;
+            this.dtpEindDatum.Location = new System.Drawing.Point(309, 13);
+            this.dtpEindDatum.Name = "dtpEindDatum";
+            this.dtpEindDatum.Size = new System.Drawing.Size(122, 20);
+            this.dtpEindDatum.TabIndex = 39;
             // 
             // cbGoedGekeurd
             // 
@@ -624,6 +626,23 @@
             this.pnSIN.Size = new System.Drawing.Size(304, 258);
             this.pnSIN.TabIndex = 10;
             // 
+            // btnWijzigEindverslag
+            // 
+            this.btnWijzigEindverslag.Location = new System.Drawing.Point(80, 229);
+            this.btnWijzigEindverslag.Name = "btnWijzigEindverslag";
+            this.btnWijzigEindverslag.Size = new System.Drawing.Size(138, 23);
+            this.btnWijzigEindverslag.TabIndex = 49;
+            this.btnWijzigEindverslag.Text = "Wijzig Eindverslag";
+            this.btnWijzigEindverslag.UseVisualStyleBackColor = true;
+            // 
+            // txtEindverslag
+            // 
+            this.txtEindverslag.Location = new System.Drawing.Point(16, 159);
+            this.txtEindverslag.Multiline = true;
+            this.txtEindverslag.Name = "txtEindverslag";
+            this.txtEindverslag.Size = new System.Drawing.Size(272, 65);
+            this.txtEindverslag.TabIndex = 48;
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -704,23 +723,6 @@
             this.panel1.Size = new System.Drawing.Size(304, 45);
             this.panel1.TabIndex = 21;
             // 
-            // txtEindverslag
-            // 
-            this.txtEindverslag.Location = new System.Drawing.Point(16, 159);
-            this.txtEindverslag.Multiline = true;
-            this.txtEindverslag.Name = "txtEindverslag";
-            this.txtEindverslag.Size = new System.Drawing.Size(272, 65);
-            this.txtEindverslag.TabIndex = 48;
-            // 
-            // btnWijzigEindverslag
-            // 
-            this.btnWijzigEindverslag.Location = new System.Drawing.Point(80, 229);
-            this.btnWijzigEindverslag.Name = "btnWijzigEindverslag";
-            this.btnWijzigEindverslag.Size = new System.Drawing.Size(138, 23);
-            this.btnWijzigEindverslag.TabIndex = 49;
-            this.btnWijzigEindverslag.Text = "Wijzig Eindverslag";
-            this.btnWijzigEindverslag.UseVisualStyleBackColor = true;
-            // 
             // MissiePagina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,8 +783,8 @@
         private System.Windows.Forms.Button btnWijzigMeting;
         private System.Windows.Forms.ListBox lbMetingen;
         private System.Windows.Forms.TextBox txtMetingNaam;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLocatieY;
+        private System.Windows.Forms.TextBox txtLocatieX;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -803,7 +805,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEindDatum;
         private System.Windows.Forms.CheckBox cbGoedGekeurd;
         private System.Windows.Forms.Panel pnSIN;
         private System.Windows.Forms.Label label19;
